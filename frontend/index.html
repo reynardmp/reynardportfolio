@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reynard Portfolio</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="landing-section">
+            <div class="landing-flex">
+                <div class="headshot-circle">
+                    <!-- Replace src with your headshot image file -->
+                    <img src="assets/headshot.jpg" alt="Headshot" />
+                </div>
+                <div class="landing-content">
+                    <h1>Hi, I'm <span style="color: #1976f2;">Alex Johnson</span></h1>
+                    <h2>Full Stack Developer</h2>
+                    <p>I'm a passionate developer with 5+ years of experience building modern web applications. I specialize in React, No
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        de.js, and cloud technologies. When I'm not coding, you'll find me exploring new technologies, contributing to open source, or hiking in the mountains.</p>
+                    <p>I believe in creating beautiful, user-centric experiences that solve real problems and make a difference in people's lives.</p>
+                </div>
+            </div>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-list">
+                <!-- Project cards will be inserted here by JS -->
+            </div>
+        </section>
+        <section id="education">
+            <h2>Education</h2>
+            <p><!-- Education details here --></p>
+        </section>
+        <section id="resume">
+            <h2>Resume</h2>
+            <p><!-- Resume details here --></p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Reynard. All rights reserved.</p>
+    </footer>
+    <script src="assets/main.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .landing-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            background: #f7fafd;
+            width: 100vw;
+        }
+        .landing-flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .headshot-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .headshot-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .landing-content {
+            flex: 1;
+            min-width: 0;
+            text-align: left;
+            background: none;
+            box-shadow: none;
+            padding: 0;
+        }
+        main, section, .projects-list, .landing-content {
+            background: none !important;
+            box-shadow: none !important;
+        }
+        body > header,
+        body > main,
+        body > footer {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        header {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            padding: 0.5em 0;
+        }
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav ul li a:hover {
+            color: #1976f2;
+        }
+        button {
+            background: #1976f2;
+            color: #fff;
+            border: none;
+            padding: 0.7em 1.5em;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 1em;
+        }
+        button:hover {
+            background: #1565c0;
+        }
+    </style>
+</body>
+</html>
