@@ -39,4 +39,23 @@ document.addEventListener('DOMContentLoaded', () => {
             contactForm.reset();
         });
     }
+
+    // PDF Resume Viewer - Load embedded Base64 PDF
+    const resumeViewer = document.getElementById('resume-viewer');
+    const resumeFallback = document.getElementById('resume-fallback');
+    
+    if (resumeViewer) {
+        // Import and display the Base64 encoded resume
+        import('./resumeData.js').then(module => {
+            const base64Pdf = module.RESUME_BASE64;
+            const pdfDataUrl = `data:application/pdf;base64,${base64Pdf}`;
+            resumeViewer.src = pdfDataUrl;
+        }).catch(error => {
+            console.error('Error loading resume:', error);
+            if (resumeFallback) {
+                resumeFallback.classList.add('active');
+                resumeFallback.textContent = 'Resume could not be loaded. Please try again later.';
+            }
+        });
+    }
 });
