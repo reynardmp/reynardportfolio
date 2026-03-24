@@ -14,7 +14,6 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -23,7 +22,7 @@
             <div class="landing-flex">
                 <div class="headshot-circle">
                     <!-- Replace src with your headshot image file -->
-                    <img src="./images/ubc-logo-2018-crest-blue-rgb72.jpg" alt="Headshot" />
+                    <img src="/images/ubc-logo-2018-crest-blue-rgb72.jpg" alt="Headshot" />
                 </div>
                 <div class="landing-content">
                     <h1>Hi, I'm <span style="color: #1976f2;">Reynard Peetosutan</span></h1>
@@ -133,6 +132,9 @@
             <div class="resume-container">
                 <iframe id="resume-viewer" class="resume-viewer" title="Resume PDF"></iframe>
                 <div id="resume-fallback" class="resume-fallback">Your resume PDF will appear here. If it doesn't load, try downloading it directly.</div>
+            </div>
+            <div class="resume-button-container">
+                <img id="open-resume-btn" src="/images/pdf-logo.png" alt="Open Resume PDF" class="resume-open-btn" />
             </div>
         </section>
     </main>
@@ -251,6 +253,22 @@
         button:hover {
             background: #1565c0;
         }
-    </style>
+        .resume-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        .resume-open-btn {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .resume-open-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
 </body>
 </html>

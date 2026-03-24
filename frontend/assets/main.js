@@ -6,12 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             title: 'Project One',
             description: 'A short description of project one.',
-            link: '#'
+            link: '#',
+            image: '/images/project-one.svg'
         },
         {
             title: 'Project Two',
             description: 'A short description of project two.',
-            link: '#'
+            link: '#',
+            image: '/images/project-two.svg'
         }
         // Add more projects as needed
     ];
@@ -22,9 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.className = 'project-card';
             card.innerHTML = `
-                <h3>${project.title}</h3>
-                <p>${project.description}</p>
-                <a href="${project.link}" target="_blank">View Project</a>
+                <div class="project-image">
+                    <img src="${project.image}" alt="${project.title}" />
+                </div>
+                <div class="project-content">
+                    <h3>${project.title}</h3>
+                    <p>${project.description}</p>
+                    <a href="${project.link}" target="_blank">View Project</a>
+                </div>
             `;
             projectsList.appendChild(card);
         });
@@ -56,6 +63,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 resumeFallback.classList.add('active');
                 resumeFallback.textContent = 'Resume could not be loaded. Please try again later.';
             }
+        });
+    }
+
+    // Open Resume Button - Open PDF in new tab
+    const openResumeBtn = document.getElementById('open-resume-btn');
+    if (openResumeBtn) {
+        openResumeBtn.style.cursor = 'pointer';
+        openResumeBtn.addEventListener('click', function() {
+            window.open('/resume.pdf', '_blank');
         });
     }
 });
