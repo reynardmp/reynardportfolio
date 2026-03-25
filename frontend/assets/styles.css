@@ -159,62 +159,188 @@ main {
 section {
     margin-bottom: 2.5rem;
 }
-.projects-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+/* Projects Carousel */
+.carousel-container {
+    padding: 1rem 0;
 }
-.project-card {
+
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.carousel-viewport {
+    flex: 1;
+    position: relative;
+    height: 380px;
+    overflow: hidden;
+}
+
+.carousel-card {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 260px;
     background: #fafafa;
     border: 1px solid #eee;
-    border-radius: 6px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-    transition: box-shadow 0.2s;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.4s ease,
+                box-shadow 0.4s ease;
 }
+
+.carousel-card.pos-center {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 1;
+    z-index: 3;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.carousel-card.pos-left {
+    transform: translate(calc(-50% - 290px), -50%) scale(0.85);
+    opacity: 0.5;
+    z-index: 1;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.carousel-card.pos-right {
+    transform: translate(calc(-50% + 290px), -50%) scale(0.85);
+    opacity: 0.5;
+    z-index: 1;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.carousel-btn {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+    color: #444;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: #1976f2;
+    color: #fff;
+    border-color: #1976f2;
+    transform: scale(1.08);
+}
+
 .project-image {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
     background: #e0e0e0;
 }
+
 .project-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.2s;
 }
-.project-card:hover .project-image img {
-    transform: scale(1.05);
-}
+
 .project-content {
-    padding: 1.5rem 1rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
+
 .project-content h3 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.1em;
+    margin: 0 0 0.4rem 0;
+    font-size: 1em;
 }
+
 .project-content p {
-    margin: 0 0 1rem 0;
-    font-size: 0.95em;
+    margin: 0 0 0.75rem 0;
+    font-size: 0.88em;
     color: #666;
     flex-grow: 1;
 }
+
 .project-content a {
     color: #1976f2;
     text-decoration: none;
     font-weight: 500;
+    font-size: 0.9em;
     transition: color 0.2s;
     align-self: flex-start;
 }
+
 .project-content a:hover {
     color: #1565c0;
+}
+
+@media (max-width: 700px) {
+    .carousel-viewport {
+        height: 300px;
+    }
+
+    .carousel-card {
+        width: 180px;
+    }
+
+    .carousel-card.pos-left {
+        transform: translate(calc(-50% - 210px), -50%) scale(0.82);
+    }
+
+    .carousel-card.pos-right {
+        transform: translate(calc(-50% + 210px), -50%) scale(0.82);
+    }
+
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-viewport {
+        height: 260px;
+    }
+
+    .carousel-card {
+        width: 150px;
+    }
+
+    .carousel-card.pos-left {
+        transform: translate(calc(-50% - 175px), -50%) scale(0.78);
+        opacity: 0.4;
+    }
+
+    .carousel-card.pos-right {
+        transform: translate(calc(-50% + 175px), -50%) scale(0.78);
+        opacity: 0.4;
+    }
+
+    .carousel-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 1.1rem;
+    }
 }
 #contact-form {
     display: flex;
